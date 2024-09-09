@@ -1,0 +1,22 @@
+{
+  "name": "playtomax",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/V-Shut/JSGame.git"
+  },
+  "author": "Vitalii",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/V-Shut/JSGame/issues"
+  },
+  "homepage": "https://github.com/V-Shut/JSGame#readme",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
