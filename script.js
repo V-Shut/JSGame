@@ -3,10 +3,6 @@ class Game {
     this.items = figures;
   }
 
-  printMatrix() {
-    console.log(this.items.map((row) => row.join(" ")).join("\n"));
-  }
-
   detectGroup(line, index) {
     const rowLength = this.items[0].length;
     const columnLength = this.items.length;
