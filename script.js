@@ -63,6 +63,7 @@ class Game {
           cellValue === String.fromCharCode(0x2666)
             ? "rgb(194, 0, 0)"
             : "";
+        cell.style.cursor = 'pointer';
         row.appendChild(cell);
         cell.addEventListener("click", () => {
           this.detectGroup(this.items.indexOf(data), index);
