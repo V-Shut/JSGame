@@ -58,6 +58,11 @@ class Game {
       data.forEach((cellValue, index) => {
         const cell = document.createElement("td");
         cell.textContent = cellValue;
+        cell.style.color =
+          cellValue === String.fromCharCode(0x2665) ||
+          cellValue === String.fromCharCode(0x2666)
+            ? "rgb(194, 0, 0)"
+            : "";
         row.appendChild(cell);
         cell.addEventListener("click", () => {
           this.detectGroup(this.items.indexOf(data), index);
