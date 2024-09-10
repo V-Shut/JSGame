@@ -1,6 +1,35 @@
 class Game {
-  constructor(figures) {
-    this.items = figures;
+  constructor() {
+    this.items = new Array(7).fill([]).map((_el) => {
+      const array = [];
+      const spades = String.fromCharCode(0x2660);
+      const hearts = String.fromCharCode(0x2665);
+      const diamonds = String.fromCharCode(0x2666);
+      const clubs = String.fromCharCode(0x2663);
+
+      for (let i = 0; i < 6; i++) {
+        array.push(Math.round(Math.random() * 3 + 1));
+      }
+
+      return array.map((item) => {
+        switch (item) {
+          case 1:
+            return spades;
+
+          case 2:
+            return hearts;
+
+          case 3:
+            return diamonds;
+
+          case 4:
+            return clubs;
+
+          default:
+            return null;
+        }
+      });
+    });
   }
 
   detectGroup(line, index) {
@@ -63,7 +92,7 @@ class Game {
           cellValue === String.fromCharCode(0x2666)
             ? "rgb(194, 0, 0)"
             : "";
-        cell.style.cursor = 'pointer';
+        cell.style.cursor = "pointer";
         row.appendChild(cell);
         cell.addEventListener("click", () => {
           this.detectGroup(this.items.indexOf(data), index);
@@ -75,37 +104,5 @@ class Game {
   }
 }
 
-const game = new Array(7).fill([]).map((_el) => {
-  const array = [];
-  const spades = String.fromCharCode(0x2660);
-  const hearts = String.fromCharCode(0x2665);
-  const diamonds = String.fromCharCode(0x2666);
-  const clubs = String.fromCharCode(0x2663);
-
-  for (let i = 0; i < 6; i++) {
-    array.push(Math.round(Math.random() * 3 + 1));
-  }
-
-  return array.map((item) => {
-    switch (item) {
-      case 1:
-        return spades;
-
-      case 2:
-        return hearts;
-
-      case 3:
-        return diamonds;
-
-      case 4:
-        return clubs;
-
-      default:
-        return null;
-    }
-  });
-});
-
-const specimen = new Game(game);
-console.log(specimen.items);
+const specimen = new Game();
 specimen.render();
